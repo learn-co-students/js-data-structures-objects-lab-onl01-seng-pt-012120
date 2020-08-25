@@ -1,27 +1,29 @@
-// Write your solution in this file!
+const driver = {};
 
-var recipes = {}
-
-function updateObjectWithKeyAndValue(object, key, value) {
-  return Object.assign({}, object, { [key]: value })
+function updateDriverWithKeyAndValue(driver, key, value) {
+  // Alternate using ES6 Spread operators:
+  // return { ...driver, ...{ [key]: value } }
+  return Object.assign({}, driver, { [key]: value });
 }
 
-function destructivelyUpdateObjectWithKeyAndValue(object, key, value) {
-  object[key] = value
+function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
+  driver[key] = value;
 
-  return object
+  return driver;
 }
 
-function deleteFromObjectByKey(object, key) {
-  const newObj = Object.assign({}, object)
+function deleteFromDriverByKey(driver, key) {
+  // Alternate using ES6 Spread operators:
+  // const newObj = { ...driver }
+  const newObj = Object.assign({}, driver);
 
-  delete newObj[key]
+  delete newObj[key];
 
-  return newObj
+  return newObj;
 }
 
-function destructivelyDeleteFromObjectByKey(object, key) {
-  delete object[key]
+function destructivelyDeleteFromDriverByKey(driver, key) {
+  delete driver[key];
 
-  return object
+  return driver;
 }
